@@ -243,3 +243,24 @@ small {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
   }
 }
+
+@keyframes hop {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100vw, -100vh);
+  }
+}
+
+#easter-bunny {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: url('./assets/easter-bunny.png') no-repeat center center;
+  background-size: contain;
+  display: none;
+  animation: hop 5s linear forwards;
+}
