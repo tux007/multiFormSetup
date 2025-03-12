@@ -259,7 +259,7 @@ small {
   left: 0;
   width: 100px;
   height: 100px;
-  background: url('./assets/easter-bunny.png') no-repeat center center;
+  background: url("./assets/easter-bunny.png") no-repeat center center;
   background-size: contain;
   display: none;
   animation: hop 5s linear forwards;
