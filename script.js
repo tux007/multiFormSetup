@@ -129,10 +129,23 @@ let myEmojis = [
   "🤑",
 ];
 
+let escPressCount = 0;
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    escPressCount++;
+    if (escPressCount === 2) {
+      urlAnimate();
+    }
+  } else {
+    escPressCount = 0;
+  }
+});
+
 let urlAnimate = () => {
-  window.location.hash =
-    myEmojis[Math.floor((Date.now() / 100) % myEmojis.length)];
+  let emoji = myEmojis[Math.floor((Date.now() / 100) % myEmojis.length)];
+  document.getElementById("emoji-display").innerText = emoji;
   setTimeout(urlAnimate, 70);
 };
 
-urlAnimate();
+document.getElementById("emoji-display").innerText = "";
